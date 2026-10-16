@@ -16,10 +16,13 @@
             --accent-blue-bg: #eff6ff;
             --accent-purple: #7c3aed;
             --accent-purple-bg: #f5f3ff;
+            --accent-emerald: #059669;
+            --accent-emerald-bg: #ecfdf5;
+            --accent-amber: #d97706;
+            --accent-amber-bg: #fffbeb;
             --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.1);
             --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
         }
-
         * {
             margin: 0;
             padding: 0;
@@ -27,7 +30,6 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             -webkit-tap-highlight-color: transparent;
         }
-
         body {
             background-color: var(--bg-color);
             color: var(--text-main);
@@ -36,20 +38,17 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 1.5rem 1rem;
+            padding: 2.5rem 1rem;
         }
-
         .container {
             width: 100%;
-            max-width: 800px;
+            max-width: 860px;
             text-align: center;
         }
-
         .header {
             margin-bottom: 2.5rem;
             padding: 0 0.5rem;
         }
-
         .header h1 {
             font-size: clamp(1.75rem, 5vw, 2.5rem);
             font-weight: 800;
@@ -58,30 +57,26 @@
             margin-bottom: 0.5rem;
             line-height: 1.2;
         }
-
         .header p {
             color: var(--text-muted);
             font-size: clamp(0.95rem, 2.5vw, 1.1rem);
             font-weight: 400;
         }
-
         .cards-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 1.5rem;
             padding: 0;
         }
-
         @media (min-width: 640px) {
             .cards-grid {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 2rem;
+                gap: 1.75rem;
             }
             .header {
                 margin-bottom: 3.5rem;
             }
         }
-
         .card {
             background: var(--card-bg);
             border: 1px solid var(--card-border);
@@ -98,14 +93,12 @@
             position: relative;
             overflow: hidden;
         }
-
         .card:hover, .card:focus-visible {
             transform: translateY(-4px);
             box-shadow: var(--shadow-hover);
             border-color: var(--card-hover-border);
             outline: none;
         }
-
         .icon-wrapper {
             width: 64px;
             height: 64px;
@@ -116,33 +109,36 @@
             margin-bottom: 1.25rem;
             transition: transform 0.25s ease;
         }
-
+        /* Color Schemes */
         .exam-card .icon-wrapper {
             background: var(--accent-blue-bg);
             color: var(--accent-blue);
         }
-
         .policy-card .icon-wrapper {
             background: var(--accent-purple-bg);
             color: var(--accent-purple);
         }
-
+        .training-card .icon-wrapper {
+            background: var(--accent-emerald-bg);
+            color: var(--accent-emerald);
+        }
+        .power-card .icon-wrapper {
+            background: var(--accent-amber-bg);
+            color: var(--accent-amber);
+        }
         .card:hover .icon-wrapper {
             transform: scale(1.08);
         }
-
         .icon-wrapper svg {
             width: 32px;
             height: 32px;
         }
-
         .card-title {
             font-size: 1.35rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
             color: var(--text-main);
         }
-
         .card-description {
             color: var(--text-muted);
             font-size: 0.925rem;
@@ -150,7 +146,6 @@
             margin-bottom: 1.5rem;
             flex-grow: 1;
         }
-
         .card-button {
             display: inline-flex;
             align-items: center;
@@ -163,31 +158,39 @@
             width: 100%;
             transition: all 0.2s ease;
         }
-
         .exam-card .card-button {
             background-color: var(--accent-blue);
             color: #ffffff;
         }
-
         .exam-card:hover .card-button {
             background-color: #1d4ed8;
         }
-
         .policy-card .card-button {
             background-color: var(--accent-purple);
             color: #ffffff;
         }
-
         .policy-card:hover .card-button {
             background-color: #6d28d9;
         }
-
+        .training-card .card-button {
+            background-color: var(--accent-emerald);
+            color: #ffffff;
+        }
+        .training-card:hover .card-button {
+            background-color: #047857;
+        }
+        .power-card .card-button {
+            background-color: var(--accent-amber);
+            color: #ffffff;
+        }
+        .power-card:hover .card-button {
+            background-color: #b45309;
+        }
         .card-button svg {
             width: 16px;
             height: 16px;
             transition: transform 0.2s ease;
         }
-
         .card:hover .card-button svg {
             transform: translateX(4px);
         }
@@ -199,7 +202,6 @@
             <h1>Astys Audio Video Pvt Ltd</h1>
             <p>Select a portal to continue</p>
         </header>
-
         <main class="cards-grid">
             <!-- Exam Center Card -->
             <a href="https://test.astys.space/" class="card exam-card" target="_blank" rel="noopener noreferrer">
@@ -217,7 +219,6 @@
                     </svg>
                 </div>
             </a>
-
             <!-- Policy Card -->
             <a href="https://policy.astys.space/" class="card policy-card" target="_blank" rel="noopener noreferrer">
                 <div class="icon-wrapper">
@@ -229,6 +230,38 @@
                 <p class="card-description">View official terms, privacy policy, and compliance documents.</p>
                 <div class="card-button">
                     <span>View Policy</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                    </svg>
+                </div>
+            </a>
+            <!-- AV Training Card -->
+            <a href="https://academy.astys.space/" class="card training-card" target="_blank" rel="noopener noreferrer">
+                <div class="icon-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25h-9A2.25 2.25 0 0 0 2.25 7.5v9a2.25 2.25 0 0 0 2.25 2.25Z" />
+                    </svg>
+                </div>
+                <h2 class="card-title">AV Training</h2>
+                <p class="card-description">Access audio-visual tutorials, technical guides, and learning modules.</p>
+                <div class="card-button">
+                    <span>Start Training</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                    </svg>
+                </div>
+            </a>
+            <!-- Power Calculator Card -->
+            <a href="https://power-calculator.astys.space/" class="card power-card" target="_blank" rel="noopener noreferrer">
+                <div class="icon-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
+                    </svg>
+                </div>
+                <h2 class="card-title">Power Calculator</h2>
+                <p class="card-description">Calculate wattage, electrical load, and AV power requirements.</p>
+                <div class="card-button">
+                    <span>Open Calculator</span>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                     </svg>
